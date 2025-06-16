@@ -3,8 +3,10 @@
   "dockerComposeFile": "../docker-compose.yml",
   "service": "backend",
   "workspaceFolder": "/app",
-  "extensions": [
-    "ms-python.python",
-    "ms-azuretools.vscode-docker"
-  ]
+  "overrideCommand": false,
+
+  "forwardPorts": [8369, 3369],
+  "remoteEnv": {
+    "PYTHONDONTWRITEBYTECODE": "1"
+  }
 }

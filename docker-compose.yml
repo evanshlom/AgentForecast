@@ -4,18 +4,30 @@ services:
   backend:
     build: ./backend
     ports:
-      - "8000:8000"
+      - "8369:8369"
     environment:
       - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
     volumes:
       - ./backend:/app
     command: python main.py
+    deploy:
+      resources:
+        limits:
+          memory: 4G
+        reservations:
+          memory: 2G
 
   frontend:
     build: ./frontend
     ports:
-      - "3000:3000"
+      - "3369:3369"
     volumes:
       - ./frontend:/app
     depends_on:
       - backend
+    deploy:
+      resources:
+        limits:
+          memory: 1G
+        reservations:
+          memory: 512M

@@ -7,6 +7,6 @@ RUN npm install
 
 COPY . .
 
-EXPOSE 3000
+EXPOSE 3369
 
-CMD ["npx", "http-server", "-p", "3000", "-c-1"]
+CMD ["npx", "http-server", "-p", "3369", "-c-1"]
