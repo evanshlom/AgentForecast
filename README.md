@@ -1,6 +1,6 @@
 # Supply Chain Forecast AI Agent
 
-AI-powered time series forecasting demo using Claude Sonnet 3.5 to modify supply chain forecasts through natural language. Track steel, wood, and glass demand with real-time adjustments via chat.
+Adjust forecasts in real-time by chatting with an LLM. Agentic Forecast React App. Tell the chatbot what changes you want to make to the supply chain forecast for a manufacturing company purchasing steel, wood, and glass 30 days into the future.
 
 ## Demo Instructions
 
