@@ -1,15 +1,24 @@
 # Supply Chain Forecast AI Agent
 
-AI-powered time series forecasting demo using Claude Sonnet 3.5 to modify RNN-based supply chain forecasts through natural language. Track steel, wood, and glass demand with real-time adjustments via chat.
+AI-powered time series forecasting demo using Claude Sonnet 3.5 to modify supply chain forecasts through natural language. Track steel, wood, and glass demand with real-time adjustments via chat.
 
 ## Demo Instructions
 
+Terminal 1 (Backend):
 ```bash
-export ANTHROPIC_API_KEY=your_api_key_here
-docker-compose up --build
+cd backend
+docker build -t forecast-backend .
+docker run -p 8369:8369 -e ANTHROPIC_API_KEY="your_api_key_here" forecast-backend
 ```
 
-Open browser: `http://localhost:3000`
+Terminal 2 (Frontend):
+```bash
+cd frontend
+docker build -t forecast-frontend .
+docker run -p 3369:3369 forecast-frontend
+```
+
+Open browser: `http://localhost:3369`
 
 Example commands:
 - "Increase steel by 20% starting next Monday"
