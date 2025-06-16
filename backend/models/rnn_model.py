@@ -1,19 +1,10 @@
-import torch
-import torch.nn as nn
 import numpy as np
 import pandas as pd
 from datetime import datetime, timedelta
 
-class SimpleLSTM(nn.Module):
-    def __init__(self, input_size=3, hidden_size=32, output_size=3):
-        super(SimpleLSTM, self).__init__()
-        self.lstm = nn.LSTM(input_size, hidden_size, batch_first=True)
-        self.fc = nn.Linear(hidden_size, output_size)
-    
-    def forward(self, x):
-        lstm_out, _ = self.lstm(x)
-        predictions = self.fc(lstm_out[:, -1, :])
-        return predictions
+class SimpleLSTM:
+    """Mock LSTM for demo - no real torch needed"""
+    pass
 
 class ForecastRNN:
     def __init__(self):
